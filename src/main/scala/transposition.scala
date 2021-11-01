@@ -53,5 +53,5 @@ object naiveTransposition extends App{
 
 object refere0 extends App{
   println(myTimer(parallelTransposition).workTime+" sec for parallel transposition to finish")
-  println(myTimer(naiveTransposition).workTime+" sec for naive transposition to finish")
+  println(myTimer(naiveTransposition).workTime+" sec for naive transposition to finishgit a")
 }
