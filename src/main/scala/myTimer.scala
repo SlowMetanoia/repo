@@ -1,5 +1,5 @@
 
-
+//объект для замеров времени работы
 class myTimer private(val a: App) {
   val workStart = System.currentTimeMillis
   a.main(Array())
