@@ -33,7 +33,7 @@ object ParallelMaxcounter extends App{
       }
       result
     }
-    val threads = for(part<-separation(testArray.length,10)) yield new Thread(()=>{
+    val threads = for(part<-separation(testArray.length,n)) yield new Thread(()=>{
       val s = segmentMaxes(part._1,part._2)
       synchronized{result = result.appended(s)}
     })
