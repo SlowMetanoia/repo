@@ -8,7 +8,7 @@ object parallelTransposition extends App {
   def separation(arraySize: Int, threadsCount: Int): Seq[(Int, Int)] =
     for (i <- 0 to (threadsCount - 1)) yield (i * arraySize / threadsCount, (i + 1) * arraySize / threadsCount - 1)
   //генерация данных
-  var testmtx = Array.ofDim[Double](10, 10)
+  var testmtx = Array.ofDim[Double](10000, 10000)
   var rand = new Random()
   for (i <- testmtx.indices; j <- testmtx(i).indices) testmtx(i)(j) = rand.nextDouble()
   //собственно функция параллельного транспонирования
@@ -43,7 +43,7 @@ object naiveTransposition extends App {
   //отладнчная функция вывода
   def printArr(matrix: Array[Array[Double]]) = matrix.foreach(xs => println(xs.mkString(" ")))
   //генерация данных
-  var testmtx = Array.ofDim[Double](5, 5)
+  var testmtx = Array.ofDim[Double](10000, 10000)
   var rand = new Random()
   for (i <- testmtx.indices; j <- testmtx(i).indices) testmtx(i)(j) = rand.nextDouble()
   //собственно однопоточная функция транспонирования
@@ -67,5 +67,5 @@ object naiveTransposition extends App {
 
 object refere0 extends App {
   println(myTimer(parallelTransposition).workTime + " sec for parallel transposition to finish")
-  println(myTimer(naiveTransposition).workTime + " sec for naive transposition to finishgit a")
+  println(myTimer(naiveTransposition).workTime + " sec for naive transposition to finish a")
 }

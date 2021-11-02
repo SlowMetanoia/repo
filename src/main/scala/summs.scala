@@ -45,6 +45,6 @@ object NaiveSum extends App {
 }
 //объект для замеров и вывода
 object refere extends App {
-  println(myTimer(NaiveSum) + "sec for naive sum")
-  println(myTimer(ParallelSum) + "sec for parallel sum")
+  println(myTimer(NaiveSum).workTime + "sec for naive sum")
+  println(myTimer(ParallelSum).workTime + "sec for parallel sum")
 }
